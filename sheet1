@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ru" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/assets/mist/img/favicon.ico">
+
+    <title>Реестр процедур | ЭТП "Элтокс" </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/mist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/mist/css/color-styles.css" rel="stylesheet">
+    <link href="/assets/mist/css/ui-elements.css" rel="stylesheet">
+    <link href="/assets/mist/css/custom.css" rel="stylesheet">
+    <link href="/assets/mist/css/custom-user.css" rel="stylesheet">
+
+    <!-- Resources -->
+    <link href="/assets/mist/css/animate.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=cyrillic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script type="text/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="/assets/js/browser-update.js"></script>
+
+    <!-- Modules -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
+
+    <link rel="stylesheet" href="/assets/js/ladda/dist/ladda-themeless.min.css">
+    <script type="text/javascript" src="/assets/js/ladda/dist/spin.min.js"></script>
+    <script type="text/javascript" src="/assets/js/ladda/dist/ladda.min.js"></script>
+    <script type="text/javascript" src="/assets/js/form-tools.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap-hover-dropdown.min.js"></script>
+
+    <script src="/assets/mist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/cryptopro.js"></script>
+    <script type="text/javascript" src="/assets/js/crypto.js"></script>
+    <script type="text/javascript" src="/assets/js/clock.js"></script>
+
+    <style type="text/css">
+        object.hiddenObject
+        {
+            visibility: hidden;
+            width: 0px;
+            height: 0px;
+            margin: 0px;
+            padding: 0px;
+            border-style: none;
+            border-width: 0px;
+            max-width: 0px;
+            max-height: 0px;
+        }
+    </style>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53582956-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body class="body-blue">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand logo" href="/"></a>
+
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+	<li class="active">
+	<a href="/registry/procedure">Процедуры</a>	</li>
+	<li>
+	<a href="/registry/participant">Участники</a>	</li>
+	<li>
+	<a href="/guest/ready">Проверка настроек</a>	</li>
+</ul>            <form action="/user/logout" method="post" id="form-logout" accept-charset="utf-8"></form><ul class="nav navbar-nav navbar-right">
+	<li>
+	<a href="/guest/login">Войти</a>	</li>
+	<li>
+	<a href="/account/begin">Регистрация</a>	</li>
+</ul>        </div>
+    </div>
+</div>
+<div class="navbar navbar-fixed-top well-sm navbar-toolbar">
+    <div class="container-fluid">
+        <div class="pull-left">Время сервера (Калининград, UTC+2): <span class="clock">18:45:54</span>
+            &nbsp;<span class="plugin_update"></span>
+        </div>
+        <div class="pull-right" style="text-align: right;"></div>
+    </div>
+</div>
+
+<div class="wrapper body-inverse">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-sm-11 col-sm-offset-0-5">
+
+                <h3>
+                    Реестр процедур                </h3>
+
+                <div class="wrapper-white">
+                    <div class="row">
+                        <div class="col-sm-12">
+                                                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                        
+<div style="margin-bottom: 20px;">
+
+    
+<form role="form" method="get" class="form-inline" id="form-procedure-search" action="/registry/procedure" style="max-width: 750px;">
+<div class="row">
+    <div class="form-group col-sm-2 id">
+        <label for="id">№ извещения</label>
+        <input type="text" name="id" value="" class="form-control" />    </div>
+    <div class="form-group col-sm-10 procedure">
+        <label for="procedure"> Наименование процедуры</label>
+        <input type="text" name="procedure" value="" class="form-control" />    </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="form-group" style="margin-top: 10px;">
+    <a href="#advanced" class="advanced-search">Расширенный поиск</a>
+</div>
+
+<div class="advanced-search-form " style="margin-top: 10px;">
+
+    <div class="row" style="margin-top: 5px;">
+        <div class="form-group col-sm-4 oos_id">
+            <label for="oos_id">№ извещения ООС</label>
+            <input type="text" name="oos_id" value="" class="form-control" />        </div>
+        <div class="form-group col-sm-4 company">
+            <label for="company"> Организатор</label>
+            <input type="text" name="company" value="" class="form-control" />        </div>
+
+        <div class="form-group col-sm-4 inn">
+            <label for="inn"> ИНН организатора</label>
+            <input type="text" name="inn" value="" class="form-control" />        </div>
+    </div>
+    <div class="row" style="margin-top: 5px;">
+        <div class="form-group col-sm-4 type">
+            <label for="type"> Тип процедуры</label><br>
+            <select name="type" class="form-control">
+<option value="0">Все</option>
+<option value="1" selected="selected">Запрос цен (котировок)</option>
+<option value="2">Запрос предложений</option>
+<option value="3">Открытый конкурс</option>
+<option value="4">Открытый аукцион на повышение</option>
+<option value="5">Открытый аукцион на понижение</option>
+</select>        </div>
+
+        <div class="col-sm-8 price-range">
+            <div class="row">
+                <div class="form-group col-sm-6 price-from">
+                    <label for="price_from">Начальная цена от</label>
+                    <input type="text" name="price_from" value="" class="form-control" />                </div>
+                <div class="form-group col-sm-6 price-to">
+                    <label for="price_to"> до</label>
+                    <input type="text" name="price_to" value="" class="form-control" />                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 5px;">
+
+        <div class="form-group col-sm-3 published">
+            <label for="published_from">Дата размещения от</label>
+            <div id="published_from" class="input-group date form_datetime" data-date-format="dd.mm.yyyy" >
+                <input type="text" name="published_from" value="" class="form-control" readonly="readonly" />                <span class="input-group-addon"><i class="glyphicon glyphicon-remove"></i></span>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-3 published">
+            <label for="published_to"> до</label>
+            <div id="published_to" class="input-group date form_datetime" data-date-format="dd.mm.yyyy" >
+                <input type="text" name="published_to" value="" class="form-control" readonly="readonly" />                <span class="input-group-addon"><i class="glyphicon glyphicon-remove"></i></span>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-3 offer">
+            <label for="offer_from"> Подача заявок от</label>
+
+            <div id="offer_from" class="input-group date form_datetime" data-date-format="dd.mm.yyyy" >
+                <input type="text" name="offer_from" value="" class="form-control" readonly="readonly" />                <span class="input-group-addon"><i class="glyphicon glyphicon-remove"></i></span>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+        </div>
+        <div class="form-group col-sm-3 offer">
+            <label for="offer_to"> до</label>
+
+            <div id="offer_to" class="input-group date form_datetime" data-date-format="dd.mm.yyyy" >
+                <input type="text" name="offer_to" value="" class="form-control" readonly="readonly" />                <span class="input-group-addon"><i class="glyphicon glyphicon-remove"></i></span>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<input type="hidden" id="status" name="status" value="" />    <div style="margin: 10px 0;">
+        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> Поиск</button> <button type="submit" class="btn btn-default reset">Сброс</button>    </div>
+</form>
+
+
+<script src="/assets/js/bootstrap-datetimepicker.js"></script>
+<script src="/assets/js/locales/bootstrap-datetimepicker.ru.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/css/datetimepicker.css">
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    $(".advanced-search").click(function() {
+
+        $('.advanced-search-form').toggleClass('hide');
+
+    });
+
+    // Дата окончания подачи заявок от
+    $('#offer_from').datetimepicker({
+        format : 'dd.mm.yyyy',
+        weekStart: 1,
+        language: 'ru',
+        minView : 2,
+        autoclose: true
+    });
+
+    // Дата окончания подачи заявок до
+    $('#offer_to').datetimepicker({
+        format : 'dd.mm.yyyy',
+        weekStart: 1,
+        language: 'ru',
+        minView : 2,
+        autoclose: true
+    });
+
+
+    // Дата публикации извещения от
+    $('#published_from').datetimepicker({
+        format : 'dd.mm.yyyy',
+        weekStart: 1,
+        language: 'ru',
+        minView : 2,
+        autoclose: true
+    });
+
+    // Дата публикации извещения до
+    $('#published_to').datetimepicker({
+        format : 'dd.mm.yyyy',
+        weekStart: 1,
+        language: 'ru',
+        minView : 2,
+        autoclose: true
+    });
+
+	$(".reset").click(function() {
+
+		$('select option:first').attr('selected', 'selected');
+		
+	    $(this).closest('form').find("input[type=text], textarea").val("");
+	    $(this).closest('form').submit();
+	});
+
+});
+
+</script></div>
+
+<div class="form-group">
+	<div class="btn-group" data-toggle="buttons-radio">
+	  <button type="submit" value="0" class="btn btn-default btn-status status-0">Все</button>
+	  <button type="submit" value="offer" class="btn btn-default btn-status status-offer">Подача заявок</button>
+	  <button type="submit" value="review" class="btn btn-default btn-status status-review">На рассмотрении</button>
+	  <button type="submit" value="bid" class="btn btn-default btn-status status-bid">Аукционный зал</button>
+      <button type="submit" value="result" class="btn btn-default btn-status status-result">Подведение итогов</button>
+	  <button type="submit" value="succeed" class="btn btn-default btn-status status-succeed">Завершенные</button>
+      <button type="submit" value="cancel" class="btn btn-default btn-status status-cancel">Отмененные</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	var radio = $('.status- ').button('toggle');
+	
+	$('.btn-status').click( function() {
+
+		$('#status').val( $(this).val() );
+		
+		$('#form-procedure-search').submit();
+		
+	});
+	
+});
+
+</script>
+
+    <div class="procedure-list">
+        
+            <div class="registerBox procedure-list-item">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tenderTd">
+                            <dl>
+                                <dt><a class="btn btn-xs btn-default btn-procedure-read" href="/procedure/read/1285" title="Просмотр"><i class="glyphicon glyphicon-search"></i> </a>
+                                    <span class="procedure-type">Запрос цен (котировок)</span>
+                                </dt>
+                                <dd><span style="margin-left: 23px;" class="label label-warning">Прием заявок</span></dd>
+                            </dl>
+                        </td>
+                        <td class="descriptTenderTd">
+                            <dl>
+                                <dt><a href="/procedure/read/1285">
+                                        № 1285</a><br>
+                                                                            <span title="Номер опубликованного извещения на ООС (223-ФЗ)" style="cursor:help;">№ ООС: 31806565846</span>
+                                                                    </dt>
+                                <dd class="nameOrganization" title="Заказчик">
+                                    Муниципальное автономное дошкольное образовательное учреждение "Детский сад № 26"                                </dd>
+                                <dd><a href="/procedure/read/1285 ">
+                                        Поставка хлеба и хлебобулочных изделий на 3 квартал 2018 года</a>
+                                </dd>
+                            </dl>
+                        </td>
+                        <td class="amountTenderTd">
+                            <p>
+                                <span class="label label-default">223 ФЗ</span>
+                            </p>
+                            <dl>
+                                <dt>92 115,40 <i class="fa fa-rub" style="font-size: 18px"></i></dt>
+                                <dd></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="publishingTd" colspan="2">
+                            <ul class="publishing">
+                                <li>Дата публикации:</li>
+                                <li class="publishingDate">04.06.2018</li>
+                                <li>Дата и время окончания подачи заявок:</li>
+                                <li class="publishingDate">15.06.2018 10:00</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="registerBox procedure-list-item">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tenderTd">
+                            <dl>
+                                <dt><a class="btn btn-xs btn-default btn-procedure-read" href="/procedure/read/1284" title="Просмотр"><i class="glyphicon glyphicon-search"></i> </a>
+                                    <span class="procedure-type">Запрос цен (котировок)</span>
+                                </dt>
+                                <dd><span style="margin-left: 23px;" class="label label-warning">Прием заявок</span></dd>
+                            </dl>
+                        </td>
+                        <td class="descriptTenderTd">
+                            <dl>
+                                <dt><a href="/procedure/read/1284">
+                                        № 1284</a><br>
+                                                                            <span title="Номер опубликованного извещения на ООС (223-ФЗ)" style="cursor:help;">№ ООС: 31806565826</span>
+                                                                    </dt>
+                                <dd class="nameOrganization" title="Заказчик">
+                                    Муниципальное автономное дошкольное образовательное учреждение "Детский сад № 26"                                </dd>
+                                <dd><a href="/procedure/read/1284 ">
+                                        Поставка рыбы и рыбной продукции на 3 квартал 2018 года</a>
+                                </dd>
+                            </dl>
+                        </td>
+                        <td class="amountTenderTd">
+                            <p>
+                                <span class="label label-default">223 ФЗ</span>
+                            </p>
+                            <dl>
+                                <dt>107 663,60 <i class="fa fa-rub" style="font-size: 18px"></i></dt>
+                                <dd></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="publishingTd" colspan="2">
+                            <ul class="publishing">
+                                <li>Дата публикации:</li>
+                                <li class="publishingDate">04.06.2018</li>
+                                <li>Дата и время окончания подачи заявок:</li>
+                                <li class="publishingDate">15.06.2018 10:00</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="registerBox procedure-list-item">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tenderTd">
+                            <dl>
+                                <dt><a class="btn btn-xs btn-default btn-procedure-read" href="/procedure/read/1283" title="Просмотр"><i class="glyphicon glyphicon-search"></i> </a>
+                                    <span class="procedure-type">Запрос цен (котировок)</span>
+                                </dt>
+                                <dd><span style="margin-left: 23px;" class="label label-warning">Прием заявок</span></dd>
+                            </dl>
+                        </td>
+                        <td class="descriptTenderTd">
+                            <dl>
+                                <dt><a href="/procedure/read/1283">
+                                        № 1283</a><br>
+                                                                            <span title="Номер опубликованного извещения на ООС (223-ФЗ)" style="cursor:help;">№ ООС: 31806565755</span>
+                                                                    </dt>
+                                <dd class="nameOrganization" title="Заказчик">
+                                    Муниципальное автономное дошкольное образовательное учреждение "Детский сад № 26"                                </dd>
+                                <dd><a href="/procedure/read/1283 ">
+                                        Поставка овощей и фруктов на 3 квартал 2018 года</a>
+                                </dd>
+                            </dl>
+                        </td>
+                        <td class="amountTenderTd">
+                            <p>
+                                <span class="label label-default">223 ФЗ</span>
+                            </p>
+                            <dl>
+                                <dt>255 161,80 <i class="fa fa-rub" style="font-size: 18px"></i></dt>
+                                <dd></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="publishingTd" colspan="2">
+                            <ul class="publishing">
+                                <li>Дата публикации:</li>
+                                <li class="publishingDate">04.06.2018</li>
+                                <li>Дата и время окончания подачи заявок:</li>
+                                <li class="publishingDate">15.06.2018 10:00</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="registerBox procedure-list-item">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tenderTd">
+                            <dl>
+                                <dt><a class="btn btn-xs btn-default btn-procedure-read" href="/procedure/read/1282" title="Просмотр"><i class="glyphicon glyphicon-search"></i> </a>
+                                    <span class="procedure-type">Запрос цен (котировок)</span>
+                                </dt>
+                                <dd><span style="margin-left: 23px;" class="label label-warning">Прием заявок</span></dd>
+                            </dl>
+                        </td>
+                        <td class="descriptTenderTd">
+                            <dl>
+                                <dt><a href="/procedure/read/1282">
+                                        № 1282</a><br>
+                                                                            <span title="Номер опубликованного извещения на ООС (223-ФЗ)" style="cursor:help;">№ ООС: 31806565728</span>
+                                                                    </dt>
+                                <dd class="nameOrganization" title="Заказчик">
+                                    Муниципальное автономное дошкольное образовательное учреждение "Детский сад № 26"                                </dd>
+                                <dd><a href="/procedure/read/1282 ">
+                                        Поставка молока и молочной продукции на 3 квартал 2018 года</a>
+                                </dd>
+                            </dl>
+                        </td>
+                        <td class="amountTenderTd">
+                            <p>
+                                <span class="label label-default">223 ФЗ</span>
+                            </p>
+                            <dl>
+                                <dt>262 762,80 <i class="fa fa-rub" style="font-size: 18px"></i></dt>
+                                <dd></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="publishingTd" colspan="2">
+                            <ul class="publishing">
+                                <li>Дата публикации:</li>
+                                <li class="publishingDate">04.06.2018</li>
+                                <li>Дата и время окончания подачи заявок:</li>
+                                <li class="publishingDate">15.06.2018 10:00</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="registerBox procedure-list-item">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tenderTd">
+                            <dl>
+                                <dt><a class="btn btn-xs btn-default btn-procedure-read" href="/procedure/read/1281" title="Просмотр"><i class="glyphicon glyphicon-search"></i> </a>
+                                    <span class="procedure-type">Запрос цен (котировок)</span>
+                                </dt>
+                                <dd><span style="margin-left: 23px;" class="label label-warning">Прием заявок</span></dd>
+                            </dl>
+                        </td>
+                        <td class="descriptTenderTd">
+                            <dl>
+                                <dt><a href="/procedure/read/1281">
+                                        № 1281</a><br>
+                                                                            <span title="Номер опубликованного извещения на ООС (223-ФЗ)" style="cursor:help;">№ ООС: 31806565679</span>
+                                                                    </dt>
+                                <dd class="nameOrganization" title="Заказчик">
+                                    Муниципальное автономное дошкольное образовательное учреждение "Детский сад № 26"                                </dd>
+                                <dd><a href="/procedure/read/1281 ">
+                                        Поставка муки, круп, кондитерских и макаронных изделий на 3 квартал 2018 года</a>
+                                </dd>
+                            </dl>
+                        </td>
+                        <td class="amountTenderTd">
+                            <p>
+                                <span class="label label-default">223 ФЗ</span>
+                            </p>
+                            <dl>
+                                <dt>68 667,90 <i class="fa fa-rub" style="font-size: 18px"></i></dt>
+                                <dd></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="publishingTd" colspan="2">
+                            <ul class="publishing">
+                                <li>Дата публикации:</li>
+                                <li class="publishingDate">04.06.2018</li>
+                                <li>Дата и время окончания подачи заявок:</li>
+                                <li class="publishingDate">15.06.2018 10:00</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="registerBox procedure-list-item">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tenderTd">
+                            <dl>
+                                <dt><a class="btn btn-xs btn-default btn-procedure-read" href="/procedure/read/1280" title="Просмотр"><i class="glyphicon glyphicon-search"></i> </a>
+                                    <span class="procedure-type">Запрос цен (котировок)</span>
+                                </dt>
+                                <dd><span style="margin-left: 23px;" class="label label-warning">Прием заявок</span></dd>
+                            </dl>
+                        </td>
+                        <td class="descriptTenderTd">
+                            <dl>
+                                <dt><a href="/procedure/read/1280">
+                                        № 1280</a><br>
+                                                                            <span title="Номер опубликованного извещения на ООС (223-ФЗ)" style="cursor:help;">№ ООС: 31806552064</span>
+                                                                    </dt>
+                                <dd class="nameOrganization" title="Заказчик">
+                                    Государственное бюджетное стационарное учреждение социального обслуживания Калининградской области «Советский психоневрологический интернат»                                </dd>
+                                <dd><a href="/procedure/read/1280 ">
+                                        Поставка продуктов питания (бананы)</a>
+                                </dd>
+                            </dl>
+                        </td>
+                        <td class="amountTenderTd">
+                            <p>
+                                <span class="label label-default">223 ФЗ</span>
+                            </p>
+                            <dl>
+                                <dt>22 500,00 <i class="fa fa-rub" style="font-size: 18px"></i></dt>
+                                <dd></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="publishingTd" colspan="2">
+                            <ul class="publishing">
+                                <li>Дата публикации:</li>
+                                <li class="publishingDate">31.05.2018</li>
+                                <li>Дата и время окончания подачи заявок:</li>
+                                <li class="publishingDate">13.06.2018 11:00</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="registerBox procedure-list-item">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tenderTd">
+                            <dl>
+                                <dt><a class="btn btn-xs btn-default btn-procedure-read" href="/procedure/read/1279" title="Просмотр"><i class="glyphicon glyphicon-search"></i> </a>
+                                    <span class="procedure-type">Запрос цен (котировок)</span>
+                                </dt>
+                                <dd><span style="margin-left: 23px;" class="label label-warning">Прием заявок</span></dd>
+                            </dl>
+                        </td>
+                        <td class="descriptTenderTd">
+                            <dl>
+                                <dt><a href="/procedure/read/1279">
+                                        № 1279</a><br>
+                                                                            <span title="Номер опубликованного извещения на ООС (223-ФЗ)" style="cursor:help;">№ ООС: 31806552059</span>
+                                                                    </dt>
+                                <dd class="nameOrganization" title="Заказчик">
+                                    Государственное бюджетное стационарное учреждение социального обслуживания Калининградской области «Советский психоневрологический интернат»                                </dd>
+                                <dd><a href="/procedure/read/1279 ">
+                                        Поставка продуктов питания (яблоки)</a>
+                                </dd>
+                            </dl>
+                        </td>
+                        <td class="amountTenderTd">
+                            <p>
+                                <span class="label label-default">223 ФЗ</span>
+                            </p>
+                            <dl>
+                                <dt>22 330,00 <i class="fa fa-rub" style="font-size: 18px"></i></dt>
+                                <dd></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="publishingTd" colspan="2">
+                            <ul class="publishing">
+                                <li>Дата публикации:</li>
+                                <li class="publishingDate">31.05.2018</li>
+                                <li>Дата и время окончания подачи заявок:</li>
+                                <li class="publishingDate">13.06.2018 11:00</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="registerBox procedure-list-item">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tenderTd">
+                            <dl>
+                                <dt><a class="btn btn-xs btn-default btn-procedure-read" href="/procedure/read/1278" title="Просмотр"><i class="glyphicon glyphicon-search"></i> </a>
+                                    <span class="procedure-type">Запрос цен (котировок)</span>
+                                </dt>
+                                <dd><span style="margin-left: 23px;" class="label label-warning">Прием заявок</span></dd>
+                            </dl>
+                        </td>
+                        <td class="descriptTenderTd">
+                            <dl>
+                                <dt><a href="/procedure/read/1278">
+                                        № 1278</a><br>
+                                                                            <span title="Номер опубликованного извещения на ООС (223-ФЗ)" style="cursor:help;">№ ООС: 31806552007</span>
+                                                                    </dt>
+                                <dd class="nameOrganization" title="Заказчик">
+                                    Государственное бюджетное стационарное учреждение социального обслуживания Калининградской области «Советский психоневрологический интернат»                                </dd>
+                                <dd><a href="/procedure/read/1278 ">
+                                        Поставка продуктов питания (рыба)</a>
+                                </dd>
+                            </dl>
+                        </td>
+                        <td class="amountTenderTd">
+                            <p>
+                                <span class="label label-default">223 ФЗ</span>
+                            </p>
+                            <dl>
+                                <dt>40 492,00 <i class="fa fa-rub" style="font-size: 18px"></i></dt>
+                                <dd></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="publishingTd" colspan="2">
+                            <ul class="publishing">
+                                <li>Дата публикации:</li>
+                                <li class="publishingDate">31.05.2018</li>
+                                <li>Дата и время окончания подачи заявок:</li>
+                                <li class="publishingDate">13.06.2018 11:00</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="registerBox procedure-list-item">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tenderTd">
+                            <dl>
+                                <dt><a class="btn btn-xs btn-default btn-procedure-read" href="/procedure/read/1277" title="Просмотр"><i class="glyphicon glyphicon-search"></i> </a>
+                                    <span class="procedure-type">Запрос цен (котировок)</span>
+                                </dt>
+                                <dd><span style="margin-left: 23px;" class="label label-warning">Прием заявок</span></dd>
+                            </dl>
+                        </td>
+                        <td class="descriptTenderTd">
+                            <dl>
+                                <dt><a href="/procedure/read/1277">
+                                        № 1277</a><br>
+                                                                            <span title="Номер опубликованного извещения на ООС (223-ФЗ)" style="cursor:help;">№ ООС: 31806552003</span>
+                                                                    </dt>
+                                <dd class="nameOrganization" title="Заказчик">
+                                    Государственное бюджетное стационарное учреждение социального обслуживания Калининградской области «Советский психоневрологический интернат»                                </dd>
+                                <dd><a href="/procedure/read/1277 ">
+                                        Поставка продуктов питания (мясо говядины)</a>
+                                </dd>
+                            </dl>
+                        </td>
+                        <td class="amountTenderTd">
+                            <p>
+                                <span class="label label-default">223 ФЗ</span>
+                            </p>
+                            <dl>
+                                <dt>161 332,00 <i class="fa fa-rub" style="font-size: 18px"></i></dt>
+                                <dd></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="publishingTd" colspan="2">
+                            <ul class="publishing">
+                                <li>Дата публикации:</li>
+                                <li class="publishingDate">31.05.2018</li>
+                                <li>Дата и время окончания подачи заявок:</li>
+                                <li class="publishingDate">13.06.2018 11:00</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="registerBox procedure-list-item">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="tenderTd">
+                            <dl>
+                                <dt><a class="btn btn-xs btn-default btn-procedure-read" href="/procedure/read/1276" title="Просмотр"><i class="glyphicon glyphicon-search"></i> </a>
+                                    <span class="procedure-type">Запрос цен (котировок)</span>
+                                </dt>
+                                <dd><span style="margin-left: 23px;" class="label label-warning">Прием заявок</span></dd>
+                            </dl>
+                        </td>
+                        <td class="descriptTenderTd">
+                            <dl>
+                                <dt><a href="/procedure/read/1276">
+                                        № 1276</a><br>
+                                                                            <span title="Номер опубликованного извещения на ООС (223-ФЗ)" style="cursor:help;">№ ООС: 31806551950</span>
+                                                                    </dt>
+                                <dd class="nameOrganization" title="Заказчик">
+                                    Государственное бюджетное стационарное учреждение социального обслуживания Калининградской области «Советский психоневрологический интернат»                                </dd>
+                                <dd><a href="/procedure/read/1276 ">
+                                        Поставка продуктов питания (молочная продукция)</a>
+                                </dd>
+                            </dl>
+                        </td>
+                        <td class="amountTenderTd">
+                            <p>
+                                <span class="label label-default">223 ФЗ</span>
+                            </p>
+                            <dl>
+                                <dt>110 178,00 <i class="fa fa-rub" style="font-size: 18px"></i></dt>
+                                <dd></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="publishingTd" colspan="2">
+                            <ul class="publishing">
+                                <li>Дата публикации:</li>
+                                <li class="publishingDate">31.05.2018</li>
+                                <li>Дата и время окончания подачи заявок:</li>
+                                <li class="publishingDate">13.06.2018 11:00</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        
+    </div>
+
+
+
+                                                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                        <div class="pagination">
+
+    <ul class="pagination">
+
+	        <li class="disabled"><span title="Первая">&laquo;</span></li>
+	
+	        <li class="disabled"><span title="Предыдущая">&larr;</span></li>
+	
+	
+		            <li class="active"><span><strong>1</strong></span></li>
+		
+	
+		            <li><a href="/registry/procedure/page/2?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=">2</a></li>
+		
+	
+		            <li><a href="/registry/procedure/page/3?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=">3</a></li>
+		
+	
+		            <li><a href="/registry/procedure/page/4?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=">4</a></li>
+		
+	
+		            <li><a href="/registry/procedure/page/5?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=">5</a></li>
+		
+	
+		            <li><a href="/registry/procedure/page/6?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=">6</a></li>
+		
+	
+		            <li><a href="/registry/procedure/page/50?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=">&hellip;</a></li>
+		
+	
+		            <li><a href="/registry/procedure/page/94?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=">94</a></li>
+		
+	
+		            <li><a href="/registry/procedure/page/95?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=">95</a></li>
+		
+	
+		            <li><a href="/registry/procedure/page/96?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=">96</a></li>
+		
+	
+	        <li><a title="Следующая" href="/registry/procedure/page/2?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=" rel="next">&rarr;</a></li>
+	
+	        <li><a title="Последняя" href="/registry/procedure/page/96?id=&amp;procedure=&amp;oos_id=&amp;company=&amp;inn=&amp;type=1&amp;price_from=&amp;price_to=&amp;published_from=&amp;published_to=&amp;offer_from=&amp;offer_to=&amp;status=" rel="last">&raquo;</a></li>
+	    </ul>
+</div><!-- .pagination -->                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="footer-wrapper" style="background: none;">
+    <div class="container-fluid">
+        <footer>
+            <ul class="list-inline pull-left">
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/instructions">Регламент</a></li>
+                <li><a href="/contacts">Контакты</a></li>
+                <li><a href="http://crbb.ru/InstantSupport-idc7hxvxcr.exe">Удаленная поддержка</a></li>
+            </ul>
+            <ul class="list-inline pull-left" style=" padding-left: 5px;">
+                <li><a href="https://twitter.com/news_CRB"><i class="fa fa-twitter"></i> Твиттер</a></li>
+                <li><a href="https://vk.com/eltox"><i class="fa fa-vk"></i> В Контакте</a></li>
+                <li><a href="https://www.facebook.com/eltoxru"><i class="fa fa-facebook"></i> Фейсбук</a></li>
+            </ul>
+            <span class="pull-right-xs text-muted">&copy; 2018 ЭТП &laquo;Элтокс&raquo;</span>
+            <div class="clearfix"></div>
+        </footer>
+    </div> <!-- /container-fluid -->
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/assets/mist/js/waypoints.min.js"></script>
+<script src="/assets/mist/js/custom.js"></script>
+<script src="/assets/mist/js/scrolltopcontrol.js"></script>
+
+<script>
+    $('.clock').serverClock({
+        serverDatetime: "2018/06/05 18:45:54"
+    });
+
+    if ( plugin_ready() ) {
+
+        var pluginVersion = get_plugin_version();
+
+        var pluginUpdateHtml = '';
+
+        if (version_compare('2.0.0', pluginVersion) < 0) {
+            pluginUpdateHtml = '<a href="/guest/ready"><span style="color: red">Вы используете устаревшую версию плагина, ' +
+                'пожалуйста обновитесь до версии 2.0, ' +
+                'возможна некорректная работа электронной подписи!</span></a>';
+        }
+
+        $('.plugin_update').html( pluginUpdateHtml );
+    }
+
+</script>
+</body></html>
