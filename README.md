@@ -1,6 +1,6 @@
 # PHP Parser task:
 
-You must parse page: https://eltox.ru/registry/procedure
+You must parse page: https://eltox.ru/registry/procedure.
 Filter: Procedure type - Request prices (quotes).
 
 Need to get:
